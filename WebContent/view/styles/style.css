@@ -1,0 +1,14 @@
+span.input-group-text{
+    width: 125px;
+}
+#signUp{
+    text-align: center;
+}
+.table{
+    margin: 5% 0%;
+}
+.jumbotron{
+    background: url("../img/telephone.jpg");
+    background-size: cover;
+    text-shadow: black 2px 2px;
+}
