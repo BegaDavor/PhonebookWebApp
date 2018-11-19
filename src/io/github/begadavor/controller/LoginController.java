@@ -19,14 +19,12 @@ import io.github.begadavor.model.User;
 @WebServlet({ "/LoginController", "/login" })
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	String indexURL = "view/index.jsp";
-	String profileURL = "view/profile.jsp";
+	String indexURL = "/index.jsp";
+	String profileURL = "/profile.jsp";
 	UserDAOImplementation userDAO = new UserDAOImplementation();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String forward = indexURL;
-		RequestDispatcher rd = request.getRequestDispatcher(forward);
-		rd.forward(request, response);
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

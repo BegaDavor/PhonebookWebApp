@@ -10,7 +10,7 @@ import io.github.begadavor.model.User;
 
 public class UserDAOImplementation implements UserDAOInterface{
 	
-	Connection connection = ConnectionManager.getInstance().getConnection();;
+	Connection connection = ConnectionManager.getInstance().getConnection();
 	
 	public UserDAOImplementation() {
 	}

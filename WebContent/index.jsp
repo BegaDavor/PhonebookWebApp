@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="view/styles/style.css">
+<link rel="stylesheet" href="styles/style.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script
@@ -35,6 +35,7 @@
 					<h2 class="text-center" style="padding: 2%; padding-top: 5%">Login</h2>
 				</div>
 				<div class="modal-body">
+				
 					<form action="login" role="form" method="post">
 						<div class="form-group">
 							<div class="input-group mb-3">

@@ -8,7 +8,7 @@ span.input-group-text{
     margin: 5% 0%;
 }
 .jumbotron{
-    background: url("../img/telephone.jpg");
+    background: url("img/telephone.jpg");
     background-size: cover;
     text-shadow: black 2px 2px;
 }

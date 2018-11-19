@@ -22,7 +22,7 @@ public class RegisterController extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    String indexURL = "view/index.jsp";
+    String indexURL = "/index.jsp";
     UserDAOImplementation userDAO = new UserDAOImplementation();
 
 	/**
@@ -30,9 +30,7 @@ public class RegisterController extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String forward = indexURL;
-		RequestDispatcher rd = request.getRequestDispatcher(forward);
-		rd.forward(request, response);
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
