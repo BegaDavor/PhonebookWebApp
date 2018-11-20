@@ -42,8 +42,8 @@ public class ViewSpecificContactController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("specContact", contact);
-		RequestDispatcher rd = request.getRequestDispatcher("contacts.jsp");
+		request.getSession().setAttribute("specContact", contact);
+		RequestDispatcher rd = request.getRequestDispatcher("editContact.jsp");
 		rd.forward(request, response);
 		
 	}

@@ -72,6 +72,8 @@ public class UserDAOImplementation implements UserDAOInterface{
 					if(rs.getString("password").equals(password))
 						return true;
 				}
+			}else if(rs == null || password.equals(null) || password.equals("") || username.equals(null) || username.equals("") ) {
+				return false;
 			}
 		}
 		
@@ -85,10 +87,10 @@ public class UserDAOImplementation implements UserDAOInterface{
 			PreparedStatement prepStatement = connection.prepareStatement("select count(*) from usersDB where username = ?");
 			prepStatement.setString(1, username);	
 						
-			ResultSet result = prepStatement.executeQuery();
-			if (result != null) {	
-				while (result.next()) {
-					if (result.getInt(1) == 1) {
+			ResultSet rs = prepStatement.executeQuery();
+			if (rs != null) {	
+				while (rs.next()) {
+					if (rs.getInt(1) == 1) {
 						return true;
 					}				
 				}

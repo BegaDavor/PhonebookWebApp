@@ -25,105 +25,83 @@
 	</div>
 
 	<div class="container-fluid bg-dark text-center text-white">
-		<p>Welcome to PhoneBook</p>
+		<p>Edit Contact</p>
 	</div>
 
 	<div class="container" style="margin: 50px auto; align-items: center">
-
-		<c:out value="${message}"></c:out>
-		<div class="modal-dialog">
-			<div class="modal-content bg-dark" style="text-align: center">
-				<div class="modal-header text-white">
-					<h2 class="text-center" style="padding: 2%; padding-top: 5%">Login</h2>
-				</div>
-				<div class="modal-body">
-					<c:if test="${not empty error}">
-				  		<p class="text-white">${error}</p>
-					</c:if>
-					<form action="login" role="form" method="post">
-						<div class="form-group">
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text bg-dark text-white">Username</span>
-								</div>
-								<input type="text" class="form-control" name="username">
-							</div>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text bg-dark text-white">Password</span>
-								</div>
-								<input type="password" class="form-control" name="password">
-							</div>
-							<div class="form-group form-check text-white">
-								<label class="form-check-label"> <input
-									class="form-check-input" type="checkbox"> Remember me
-								</label>
-							</div>
-							<button type="submit" class="btn btn-primary">Submit</button>
-							<button type="button" class="btn btn-danger" data-toggle="modal"
-								data-target="#signUp">Sign Up</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-
-		<div class="modal fade" id="signUp">
+		<!-- 		Edit Contact Modal -->
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4>Sign Up</h4>
+						<h4>Edit Contact</h4>
 						<button type="button" class="close" data-dismiss="modal">x</button>
 					</div>
 					<div class="modal-body bg-dark">
-						<form action="register" role="form" method="post">
+						<form action="editContact" role="form" method="post">
 							<div class="form-group">
 								<div class="input-group mb-3">
+
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-dark text-white">First
 											name</span>
 									</div>
-									<input type="text" class="form-control" name="firstname">
+									<input type="text" class="form-control" name="editFirstName"
+										value="${specContact.firstName}">
+
 								</div>
 
 								<div class="input-group mb-3">
+
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-dark text-white">Last
 											name</span>
 									</div>
-									<input type="text" class="form-control" name="lastname">
+									<input type="text" class="form-control" name="editLastName"
+										value="${specContact.lastName}">
+
 								</div>
+
 								<div class="input-group mb-3">
+
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-dark text-white">City</span>
+									</div>
+									<input type="text" class="form-control" name="editCity"
+										value="${specContact.city}">
+
+								</div>
+
+								<div class="input-group mb-3">
+
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-dark text-white">E -
 											mail</span>
 									</div>
-									<input type="email" class="form-control" name="email">
+									<input type="text" class="form-control" name="editEmail"
+										value="${specContact.email}">
+
 								</div>
+
 								<div class="input-group mb-3">
+
 									<div class="input-group-prepend">
-										<span class="input-group-text bg-dark text-white">Username</span>
+										<span class="input-group-text bg-dark text-white">Phone
+											number</span>
 									</div>
-									<input type="text" class="form-control" name="regUsername">
-								</div>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text bg-dark text-white">Password</span>
-									</div>
-									<input type="password" class="form-control" name="regPassword">
+									<input type="text" class="form-control" name="editPhoneNumber"
+										value="${specContact.phoneNumber}">
+
 								</div>
 								<button type="submit" class="btn btn-success">Submit</button>
-								<button type="button" class="btn btn-danger"
-									data-dismiss="modal">Cancel</button>
+								<button type="reset" class="btn btn-danger">Reset</button>
 							</div>
 						</form>
-
 					</div>
 				</div>
 			</div>
 		</div>
 
-	</div>
+
 
 	<footer class="page-footer font-small pt-4 bg-dark">
 		<div class="footer-copyright text-center py-3 text-white">

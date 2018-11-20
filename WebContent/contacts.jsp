@@ -29,11 +29,11 @@
 	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script src="scripts/script.js"></script>
 </head>
-<body>
+<body style="margin: auto">
 
 	<div class="jumbotron text-center text-white" style="margin-bottom: 0">
 		<h1>PhoneBook</h1>
-		<p>Welcome, ${user.firstname}</p>
+		<p>Welcome, ${user.firstname}!</p>
 	</div>
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed">
@@ -89,16 +89,14 @@
 				</tbody>
 			</table>
 		</form>
-		<div class="btn-group">
+		<div class="btn-group btn-group-md">
 			<button type="button" class="btn btn-success" data-toggle="modal"
-				data-target="#addContact" style="margin-bottom: 2%;">Add
-				Contact</button>
+				data-target="#addContact" style="margin-bottom: 2%;">Add</button>
 			<button type="button" class="btn btn-warning text-white"
-				data-toggle="modal" data-target="#editContact"
-				style="margin-bottom: 2%;">Edit Contact</button>
+				data-toggle="modal" data-target="#getContactForEdit"
+				style="margin-bottom: 2%;">Edit</button>
 			<button type="button" class="btn btn-danger" data-toggle="modal"
-				data-target="#deleteContact" style="margin-bottom: 2%;">Delete
-				Contact</button>
+				data-target="#deleteContact" style="margin-bottom: 2%;">Delete</button>
 		</div>
 		<!-- 		Add Contact Modal -->
 		<div class="modal fade" id="addContact">
@@ -184,7 +182,8 @@
 							<div class="form-group">
 								<div class="input-group mb-3">
 									<div class="input-group-prepend">
-										<span class="input-group-text bg-dark text-white">Contact ID</span>
+										<span class="input-group-text bg-dark text-white">Contact
+											ID</span>
 									</div>
 									<input type="text" class="form-control" name="deleteContactID">
 
@@ -198,6 +197,38 @@
 			</div>
 		</div>
 
+		<!-- 		Get Contact For Edit Modal -->
+		<div class="modal fade" id="getContactForEdit">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>Edit Contact</h4>
+						<button type="button" class="close" data-dismiss="modal">x</button>
+					</div>
+					<div class="modal-body bg-dark">
+						<p class="text-white">Input ID of contact which you want to
+							edit!</p>
+
+						<form action="viewSpecificContact" role="form" method="post">
+							<div class="form-group">
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-dark text-white">Contact
+											ID</span>
+									</div>
+									<input type="text" class="form-control" name="getSpecContactID">
+
+								</div>
+								<form action="viewSpecificContact" method="post" id="getContactForEdit">
+								<button type="submit" class="btn btn-success">Submit</button>
+								</form>
+								<button type="reset" class="btn btn-danger">Reset</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 

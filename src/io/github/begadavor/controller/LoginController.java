@@ -42,11 +42,10 @@ public class LoginController extends HttpServlet {
 			request.getSession().setAttribute("user", user);
 			request.getRequestDispatcher(profileURL).forward(request, response);
 		}else {
-			String message = "Username or password is not valid!";
+			String message = "Username or password is wrong. Try again!";
 			RequestDispatcher failure = request.getRequestDispatcher(indexURL);
-			request.getSession().setAttribute("error", message);
+			request.setAttribute("error", message);
 			failure.forward(request, response);
-			
 		}
 	}
 

@@ -55,9 +55,8 @@ public class ContactDAOImplementation implements ContactDAOInterface {
 	}
 
 	@Override
-	public void updateContact(int contactID, int userID) throws SQLException {
+	public void updateContact(Contact contact, int userID) throws SQLException {
 		// TODO Auto-generated method stub
-		Contact contact = getContactByID(contactID, userID);
 		
 		if (contact != null) {
 			String query = "UPDATE contactsDB SET firstName = ?, lastName = ?, city = ?, email = ?, phoneNumber = ? WHERE contactID = ? AND userID = ?";

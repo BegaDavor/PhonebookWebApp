@@ -13,9 +13,7 @@ import io.github.begadavor.dao.ContactDAOImplementation;
 import io.github.begadavor.model.Contact;
 import io.github.begadavor.model.User;
 
-/**
- * Servlet implementation class EditContactController
- */
+
 @WebServlet({ "/EditContactController", "/editContact" })
 public class EditContactController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,10 +25,18 @@ public class EditContactController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Contact contact = (Contact) request.getAttribute("specContact");
-		User user = (User) request.getAttribute("user");
+		Contact contact = (Contact) request.getSession().getAttribute("specContact");
+		User user = (User) request.getSession().getAttribute("user");
+		
+		contact.setFirstName(request.getParameter("editFirstName"));
+		contact.setLastName(request.getParameter("editLastName"));
+		contact.setCity(request.getParameter("editCity"));
+		contact.setEmail(request.getParameter("editEmail"));
+		contact.setPhoneNumber(request.getParameter("editPhoneNumber"));
+		
+		
 		try {
-			new ContactDAOImplementation().updateContact(contact.getContactID(), user.getUserID());
+			new ContactDAOImplementation().updateContact(contact, user.getUserID());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

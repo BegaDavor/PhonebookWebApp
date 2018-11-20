@@ -56,16 +56,16 @@
 				<div class="modal-header text-white">
 					<h2 class="text-center" style="padding: 2%; padding-top: 5%">Profile</h2>
 				</div>
-				<div class="modal-body text-white">
+				<div class="modal-body text-black">
 
-					<ul>
-						<li><h5 class="col-sm-4" style="text-align: left;">First name:</h5>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><h5 class="col-sm-4" style="text-align: left;">First name:</h5>
 							<p class="col-sm-8" style="text-align: left; padding: 0 5%;">${user.firstname}</p></li>
-						<li><h5 class="col-sm-4" style="text-align: left;">Last name:</h5>
+						<li class="list-group-item"><h5 class="col-sm-4" style="text-align: left;">Last name:</h5>
 							<p class="col-sm-8" style="text-align: left; padding: 0 5%;">${user.lastname}</p></li>
-						<li><h5 class="col-sm-4" style="text-align: left;">E - mail:</h5>
+						<li class="list-group-item"><h5 class="col-sm-4" style="text-align: left;">E - mail:</h5>
 							<p class="col-sm-8" style="text-align: left; padding: 0 5%;">${user.email}</p></li>
-						<li><h5 class="col-sm-4" style="text-align: left;">Username:</h5>
+						<li class="list-group-item"><h5 class="col-sm-4" style="text-align: left;">Username:</h5>
 							<p class="col-sm-8" style="text-align: left; padding: 0 5%;">${user.username}</p></li>
 					</ul>
 					<button class="btn btn-danger" type="submit" style="float: right; margin-top: 5px;">
@@ -76,7 +76,6 @@
 		</div>
 
 	</div>
-
 
 	<footer class="page-footer font-small pt-4 bg-dark">
 		<div class="footer-copyright text-center py-3 text-white">
